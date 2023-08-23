@@ -19,23 +19,23 @@ function ProjectCreate() {
             .then(function (response) {
                 Swal.fire({
                     icon: 'success',
-                    title: 'project saved successfully',
+                    title: 'Project saved successfully!',
                     showConfirmButton: false,
                     timer: 1500
                 })
                 setIsSaving(false);
-                setName('');
-                setDescription('');
+                setName('')
+                setDescription('')
             })
-            .catch(function (err) {
+            .catch(function (error) {
                 Swal.fire({
                     icon: 'error',
                     title: 'An Error Occured!',
                     showConfirmButton: false,
                     timer: 1500
                 })
-                setIsSaving(false);
-            })
+                setIsSaving(false)
+            });
     }
     return (
         <Layout>

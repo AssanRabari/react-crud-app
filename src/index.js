@@ -6,9 +6,9 @@ import axios from 'axios';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-axios.defaults.baseURL = process.env.REACT_APP_API_URL
+axios.defaults.baseURL = process.env.REAT_APP_API_URL
 axios.interceptors.request.use(function (config) {
-  config.headers['X-Binarybox-Api-Key'] = process.env.REACT_APP_API_KEY;
+  config.headers['X-Binarybox-Api-Key'] = process.env.REAT_APP_API_KEY;
   return config;
 });
 root.render(
