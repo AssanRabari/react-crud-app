@@ -1,10 +1,20 @@
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+import ProjectList from "./pages/ProjectList"
+import ProjectCreate from "./pages/ProjectCreate"
+import ProjectEdit from "./pages/ProjectEdit"
+import ProjectShow from "./pages/ProjectShow"
 
 function App() {
   return (
-    <div className="App">
-      <h1>App</h1>
-    </div>
+    <Router>
+      <Routes>
+          <Route exact path="/" element={<ProjectList/>} />
+          <Route exact path="/create" element={<ProjectCreate/>} />
+          <Route exact path="/edit/:id" element={<ProjectEdit/>} />
+          <Route exact path="/show/:id" element={<ProjectShow/>} />
+      </Routes>
+    </Router>
   );
 }
 
