@@ -7,6 +7,21 @@ import Layout from "../components/Layout"
 function ProjectList() {
     const [projectList, setProjectList] = useState([]);
 
+    useEffect(() => [
+        fetchProjectList()
+    ], []);
+
+    const fetchProjectList = () =>{
+        axios.get('/api/projects')
+        .then(function (response) {
+          setProjectList(response.data);
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+    }
+    
+
     return(
         <Layout>
            <div className="container">
